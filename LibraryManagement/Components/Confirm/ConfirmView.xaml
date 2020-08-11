@@ -1,0 +1,20 @@
+﻿<Window x:Class="LibraryManagement.Components.Confirm.ConfirmView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryManagement.Components.Confirm"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Confirmation" Height="200" Width="400">
+    <Window.Resources>
+        <System:Boolean x:Key="FalseValue">False</System:Boolean>
+        <System:Boolean x:Key="TrueValue">True</System:Boolean>
+    </Window.Resources>
+    <Grid >
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Message}" VerticalAlignment="Top" Height="87" Width="384"/>
+        <Button Content="Yes" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Command="{Binding UserResponse}" CommandParameter="{StaticResource TrueValue}" Margin="205,141,0,0"/>
+        <Button Content="No" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding UserResponse}" CommandParameter="{StaticResource FalseValue}"  Margin="309,141,0,0"/>
+
+    </Grid>
+</Window>
